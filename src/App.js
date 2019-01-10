@@ -1,26 +1,34 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import Title from "./components/Title";
+import Images from "./components/Images";
+import Wrapper from "./components/Wrapper";
+import smash from "./smash.json";
 import './App.css';
+import Score from "./components/Score";
+import HighScore from './components/HighScore';
 
 class App extends Component {
+  // Setting this.state.images to the images json array
+  state = {
+    smash
+  };
+
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
+      
+      <Wrapper>
+      <Title>Reactive Clicky Game</Title>
+      <Score />
+      <HighScore />
+
+      
+      {this.state.smash.map(smash => (
+        <Images src={smash.image} key={smash.id} clicked={smash.clicked}
+        />))}
+    
+      
+      </Wrapper>
+       
     );
   }
 }
