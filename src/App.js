@@ -13,20 +13,25 @@ class App extends Component {
     smash
   };
 
+  
+
   render() {
     return (
       
       <Wrapper>
-      <Title>Reactive Clicky Game</Title>
-      <Score />
-      <HighScore />
+        <Title>Reactive Clicky Game</Title>
+        <Score />
+        <HighScore />
 
       
       {this.state.smash.map(smash => (
-        <Images src={smash.image} key={smash.id} clicked={smash.clicked}
-        />))}
-    
-      
+        <Images 
+        id={smash.id}
+        src={smash.image} 
+        key={smash.id} 
+        clicked={smash.clicked}
+        />
+      ))}
       </Wrapper>
        
     );
