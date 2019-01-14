@@ -1,41 +1,43 @@
-import React, { Component } from 'react';
+import React from 'react';
 import Title from "./components/Title";
-import Images from "./components/Images";
+// import Images from "./components/Images";
 import Wrapper from "./components/Wrapper";
-import smash from "./smash.json";
+import cards from "./cards.json";
 import './App.css';
 import Score from "./components/Score";
 import HighScore from './components/HighScore';
+import Board from "./components/Board";
 
-class App extends Component {
-  // Setting this.state.images to the images json array
-  state = {
-    smash
-  };
+export default class App extends React.Component {
+    constructor(props) {
+      super(props);
+      this.state = {
+        cards,
+        title: 'Mario Memory Game',
+        score: 0,
+        highScore: 0 
+      }
+    };
+    componentDidMount(){
+      console.log('componentDidMount');
+    }
+    componentDidUpdate(){
+      console.log('componentDidMount')
+    }
+    
 
-  
 
   render() {
-    return (
-      
+    return (      
       <Wrapper>
-        <Title>Reactive Clicky Game</Title>
-        <Score />
-        <HighScore />
-
-      
-      {this.state.smash.map(smash => (
-        <Images 
-        id={smash.id}
-        src={smash.image} 
-        key={smash.id} 
-        clicked={smash.clicked}
-        />
-      ))}
-      </Wrapper>
+           <Title title={this.state.title}/>
+           <HighScore highScore={this.state.highScore}/>
+           <Score score={this.state.score}/>
+           <Board />
+     </Wrapper>
        
     );
   }
 }
 
-export default App;
+

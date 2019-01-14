@@ -1,8 +1,16 @@
 import React from "react";
 // import "./style.css";
 
-function Title(props) {
-    return <h1 className="title">{props.children}</h1>;
+const Title = (props) => {
+    return (
+        <div>
+          <h1 className="title">{props.title}</h1>
+        </div>
+    );
+};
+
+Headers.defaultProps = {
+    title: 'Mario Memory Game'
 }
 
 export default Title;
