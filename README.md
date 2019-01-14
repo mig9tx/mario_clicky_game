@@ -1,3 +1,22 @@
+## Miguel's Psudocode:
+1. Upon clicking the image, the deck of cards needs to be shuffled.
+2. The card that is clicked needs to have the attribute value for clicked changed to "true".
+3. Increment the score and highScore by one if the card has not been clicked.
+ Upon clicking the next card: 
+4. check that the attribute of the card.
+5. if false, increment score by one and change that card's attribute value to "true". Increment highScore by one also if lower than current score.
+6. if true(means card has alredy been clicked), reset the score and reset any attribute of the clicked values that are "true" back to "false"
+7. should they keep getting the right card each time, step 5 will continue until the score reaches 10.
+8. All of the updates whether of changing the values of the "clicked" attributes to changing the scores are updates to the state of the app or components.
+
+I couldn't figure out how to shuffle the deck after each onClick of a picture. How to change the boolean value of each picture upon clicking on it.  
+
+# 
+
+
+
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
