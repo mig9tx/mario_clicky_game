@@ -9,6 +9,10 @@ import HighScore from './components/HighScore';
 import Board from "./components/Board";
 import shuffle from 'lodash/shuffle';
 import Card from "./components/Card";
+import Message from "./components/Message";
+import Sound from 'react-sound'
+import coinSound from './nsmb_coin.wav'
+import loseSound from './nsmb_death.wav'
 
 export default class App extends React.Component {
     constructor(props) {
@@ -17,7 +21,8 @@ export default class App extends React.Component {
         cards,
         title: 'Mario Memory Game',
         score: 0,
-        highScore: 0 
+        highScore: 0,
+        message: "Click on a each Mario card and try not to repeat to set the high score!" 
       }
     };
     componentDidMount(){
@@ -51,22 +56,30 @@ export default class App extends React.Component {
     };
 
     rightGuess = (cards) => {
+      let sound = new Audio(coinSound);
+      sound.play();
       let newScore = this.state.score;
       newScore++;
+      let rightMessage = "Correct!"
       let newHighScore = Math.max(newScore, this.state.highScore);
       console.log(newHighScore, this.state.highScore)
       this.setState({
         cards: shuffle(cards),
         score: newScore,
         highScore: newHighScore,
+        message: rightMessage
       });
       console.log("user guessed correctly");
     }
 
     wrongGuess = (cards) => {
+      let sound = new Audio(loseSound);
+      sound.play();
+      let wrongMessage = "GAME OVER, Try Again!"
       this.setState({
         cards: this.resetCards(cards),
-        score: 0
+        score: 0,
+        message: wrongMessage
       })
     }
 
@@ -93,6 +106,7 @@ export default class App extends React.Component {
            <Title title={this.state.title}/>
            <HighScore highScore={this.state.highScore}/>
            <Score score={this.state.score}/>
+           <Message message={this.state.message}/>
            <Board>
              {
                this.state.cards.map(card => (
