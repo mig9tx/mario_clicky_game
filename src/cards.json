@@ -3,61 +3,61 @@
         "id": 1,
         "name": "one",
         "image": "http://pngimg.com/uploads/mario/mario_PNG129.png",
-        "clicked": "false"
+        "clicked": false
     },
     {
         "id": 2,
         "name": "two",
         "image": "http://pngimg.com/uploads/mario/mario_PNG67.png",
-        "clicked": "false"
+        "clicked": false
     },
     {
         "id": 3,
         "name": "three",
         "image": "http://pngimg.com/uploads/mario/mario_PNG63.png",
-        "clicked": "false"
+        "clicked": false
     },
     {
         "id": 4,
         "name": "four",
         "image": "http://pngimg.com/uploads/mario/mario_PNG60.png",
-        "clicked": "false"
+        "clicked": false
     },
     {
         "id": 5,
         "name": "five",
         "image": "http://pngimg.com/uploads/mario/mario_PNG51.png",
-        "clicked": "false"
+        "clicked": false
     },
     {
         "id": 6,
         "name": "six",
         "image": "http://pngimg.com/uploads/mario/mario_PNG53.png",
-        "clicked": "false"
+        "clicked": false
     },
     {
         "id": 7,
         "name": "seven",
         "image": "http://pngimg.com/uploads/mario/mario_PNG48.png",
-        "clicked": "false"
+        "clicked": false
     },
     {
         "id": 8,
         "name": "eight",
         "image": "http://pngimg.com/uploads/mario/mario_PNG81.png",
-        "clicked": "false"
+        "clicked": false
     },
     {
         "id": 9,
         "name": "nine",
         "image": "http://pngimg.com/uploads/mario/mario_PNG79.png",
-        "clicked": "false"
+        "clicked": false
     },
     {
         "id": 10,
         "name": "ten",
         "image": "http://pngimg.com/uploads/mario/mario_PNG80.png",
-        "clicked": "false"
+        "clicked": false
     }
     ]
     

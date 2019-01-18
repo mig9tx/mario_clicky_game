@@ -25,17 +25,55 @@ export default class App extends React.Component {
       console.log('componentDidMount');
     }
     componentDidUpdate(){
-      console.log('componentDidMount')
+      console.log('componentDidUpdate')
     }
     shuffleCards(){
       this.setState({ cards: shuffle(this.state.cards) });
     }
-    handleCardClick() {
-      //call back of card.id in order to check if card "clicked" is true || false.
-      //if true, game ends, state reset to default
+    //call back of card.id in order to check if card "clicked" is true || false.
+    handleCardClick = (id) => {
+      console.log("cardClick function working", id);
+      let guessedRight = false;
+      let cards = this.state.cards.map(card => {
+        console.log(this.state.cards);
+        if (card.id === id) {
+          if(!card.clicked) {
+            card.clicked = true;
+            guessedRight = true;
+          }
+        }
+        console.log(card);
+        return card;
+      });
       //if false, convert "clicked" to true, increment score by 1 and highScore by one, call shuffleCards again
+      //if true, game ends, state reset to default
+      guessedRight ? this.rightGuess(cards) : this.wrongGuess(cards);
+    };
+
+    rightGuess = (cards) => {
+      let newScore = this.state.score;
+      newScore++;
+      let newHighScore = Math.max(newScore, this.state.highScore);
+
+      this.setState({
+        cards: shuffle(cards),
+        score: newScore,
+        topScore: newHighScore,
+      });
+      console.log("user guessed correctly");
     }
 
+    wrongGuess = (cards) => {
+      this.setState({
+        cards: this.resetCards(cards),
+        score: 0
+      })
+    }
+
+    resetCards = (cards) => {
+     const resetCards = cards.map(card => ({...card, clicked: false}));
+     return shuffle(resetCards);
+    }
     // GUESSED CORRECTLY
     //1. if card clicked = 'false' then change clicked property to true for that specific card and
     // shuffle the cards, increment score by one and increment high score by one if higher that prev high score
