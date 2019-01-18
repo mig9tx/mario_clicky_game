@@ -1,4 +1,5 @@
 import React from 'react';
+import './Card.css'
 
 
 const Card = (props) => {
@@ -9,7 +10,8 @@ const Card = (props) => {
           id={props.id}
           alt={props.id}
           clicked={props.clicked}
-          width="100px"
+          
+          height="150px"
           onClick={() => props.handleCardClick(props.id)}
           />
         </div>

@@ -14,12 +14,13 @@ import Sound from 'react-sound'
 import coinSound from './nsmb_coin.wav'
 import loseSound from './nsmb_death.wav'
 
+
 export default class App extends React.Component {
     constructor(props) {
       super(props);
       this.state = {
         cards,
-        title: 'Mario Memory Game',
+        title: 'Super Mario Memory Game',
         score: 0,
         highScore: 0,
         message: "Click on a each Mario card and try not to repeat to set the high score!" 
