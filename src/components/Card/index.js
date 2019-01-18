@@ -10,7 +10,7 @@ const Card = (props) => {
           alt={props.id}
           clicked={props.clicked}
           width="100px"
-          onClick={props.handleCardClick}
+          onClick={() => props.handleClick(props.id)}
           />
         </div>
     );
