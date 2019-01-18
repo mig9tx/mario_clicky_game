@@ -54,11 +54,11 @@ export default class App extends React.Component {
       let newScore = this.state.score;
       newScore++;
       let newHighScore = Math.max(newScore, this.state.highScore);
-
+      console.log(newHighScore, this.state.highScore)
       this.setState({
         cards: shuffle(cards),
         score: newScore,
-        topScore: newHighScore,
+        highScore: newHighScore,
       });
       console.log("user guessed correctly");
     }
