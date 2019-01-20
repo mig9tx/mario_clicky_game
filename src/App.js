@@ -13,6 +13,7 @@ import Message from "./components/Message";
 import Sound from 'react-sound'
 import coinSound from './nsmb_coin.wav'
 import loseSound from './nsmb_death.wav'
+import stageClear from './nsmb_course_clear-bonus.wav'
 
 
 export default class App extends React.Component {
@@ -64,6 +65,10 @@ export default class App extends React.Component {
       let rightMessage = "Correct!"
       let newHighScore = Math.max(newScore, this.state.highScore);
       console.log(newHighScore, this.state.highScore)
+      if (newScore > 9) {
+        let sound = new Audio (stageClear);
+        sound.play();
+      }
       this.setState({
         cards: shuffle(cards),
         score: newScore,
@@ -104,7 +109,13 @@ export default class App extends React.Component {
   render() {
     return (      
       <Wrapper>
-           <Title title={this.state.title}/>
+            <div id="portfolio-link">
+                <a href="https://mig9tx.github.io/#portfolio">Portfolio</a>
+            </div>
+            <div id="portfolio-link">
+                <a href="https://github.com/mig9tx/mario_clicky_game">GitHub</a>
+            </div>
+            <Title title={this.state.title}/>
            <HighScore highScore={this.state.highScore}/>
            <Score score={this.state.score}/>
            <Message message={this.state.message}/>

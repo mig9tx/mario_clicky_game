@@ -1,3 +1,8 @@
 .title {
     font-family: 'Carter One', cursive;
+    text-align: center;
+    color: blue;
+    border: 5px red;
+    text-shadow: 2px 2px 2px 2px yellow;
+    
 }

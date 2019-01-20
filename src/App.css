@@ -2,6 +2,11 @@
   text-align: center;
 }
 
+#portfolio-link{
+  text-align: center;
+  
+}
+
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
   height: 40vmin;
@@ -19,7 +24,7 @@
 }
 
 .App-link {
-  color: #61dafb;
+  color: orangered;
 }
 
 @keyframes App-logo-spin {
